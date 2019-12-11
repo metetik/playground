@@ -1,0 +1,24 @@
+{% extends "layout.html"%}
+{%block block1%}
+<title>Ana sayfa</title>
+{%endblock%}
+
+{%block body%}
+    <br><br><br><br>
+    <h1>Ana sayfa</h1>
+
+    {% if sayi == "1"%}
+        <h2>Bir</h2>
+    {% elif sayi == "2"%}
+        <h2>İki</h2>
+    {%else%}
+        <h2>Başka</h2>
+    {% endif %}
+    
+    <ul>
+    {% for i in range(10) %}
+        <li>{{i**2}}</li>    
+    {% endfor %}
+    </ul>
+    
+{%endblock%}
