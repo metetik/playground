@@ -1,0 +1,6 @@
+>>git --version : git'in versiyonunu öðrenmek için
+>>git config --global user.name "metetik" : username belirlemek
+>>git config --global user.email "m.e.tetik03@gmail.com" : user email belirlemek
+>>git add . : dosyalarý ekle
+>>git commit -m : dosyalarý commit et
+>>git push : github'a gönder.
