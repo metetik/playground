@@ -94,6 +94,10 @@ def login():
             real_password = data["password"]
 
             if sha256_crypt.verify(password_entered,real_password):
+                #Session kontrolü,giriş yapıldı
+                session["logged_in"] = True
+                session["username"] = username
+
                 flash("Giriş Başarılı...","success")
 
                 return redirect(url_for("index"))
@@ -107,6 +111,14 @@ def login():
             return redirect(url_for("login"))
     else:
         return render_template("login.html",form = form)
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    
+    flash("Çıkış yapıldı...","success")
+
+    return redirect(url_for("index"))
 
 def dinamik(id):
     return "dinamik url id : " + id
