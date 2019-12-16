@@ -48,8 +48,21 @@ def about():
 def register():
     form = RegisterForm(request.form)
 
-    if request.method == "POST":
-        return redirect(url_for("index"))
+    if request.method == "POST" and form.validate():#request postsa ve form validate ise
+        name = form.name.data
+        username = form.username.data
+        email = form.email.data
+        password = sha256_crypt.encrypt(form.password.data)#parolayı alırken şifrele
+
+        cursor = mysql.connection.cursor()
+
+        sorgu = "insert into users(name,email,username,password) values(%s,%s,%s,%s)"
+
+        cursor.execute(sorgu,(name,email,username,password))
+        mysql.connection.commit()
+        cursor.close()
+
+        return redirect(url_for("index")) #index fonksiyonunun adresine git
     else:
         return render_template("register.html",form = form) 
      
