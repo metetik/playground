@@ -26,6 +26,8 @@ class RegisterForm(Form):
 
 app = Flask("__name__")
 
+app.secret_key = "ybblog"#flash mesaj özelliğini kullanmak için bir secret key gerekir
+
 # Veritabanı ayarları
 app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "root"
@@ -61,6 +63,8 @@ def register():
         cursor.execute(sorgu,(name,email,username,password))
         mysql.connection.commit()
         cursor.close()
+
+        flash("Kayıt Başarılı...","success")#succes tipinde flash messagı kullanılacak
 
         return redirect(url_for("index")) #index fonksiyonunun adresine git
     else:
