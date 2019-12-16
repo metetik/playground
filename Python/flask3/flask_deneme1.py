@@ -4,6 +4,19 @@ from flask import Flask,render_template,flash,redirect,url_for,session,logging,r
 from flask_mysqldb import MySQL
 from wtforms import Form,StringField,TextAreaField,PasswordField,validators
 from passlib.hash import sha256_crypt
+from functools import wraps
+#Kullanıcı giriş decorator'ı
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if "logged_in" in session:
+            return f(*args, **kwargs)
+        
+        else:
+            flash("Bu sayfayı görüntülemek için lütfen giriş yapın","primary")
+            
+            return redirect(url_for("login"))
+    return decorated_function
 
 #Kullanıcı kayıt formu
 class RegisterForm(Form):
@@ -119,6 +132,11 @@ def logout():
     flash("Çıkış yapıldı...","success")
 
     return redirect(url_for("index"))
+
+@app.route("/dashboard")
+@login_required
+def dashboard():
+    return render_template("dashboard.html")
 
 def dinamik(id):
     return "dinamik url id : " + id

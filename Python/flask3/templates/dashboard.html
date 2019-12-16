@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h4>Kontrol Paneli</h4>
+    <small>Hoş Geldin {{session["username"]}}</small>
+    <hr>
+
+    <a href="/addarticle" class="btn btn-danger">Makale Ekle</a>
+{% endblock body %}
