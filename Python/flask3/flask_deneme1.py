@@ -24,6 +24,10 @@ class RegisterForm(Form):
 
     confirm = PasswordField("Parola Doğrula")
 
+class LoginForm(Form):
+    username = StringField("Kullanıcı Adı")      
+    password = PasswordField("Parola")
+
 app = Flask("__name__")
 
 app.secret_key = "ybblog"#flash mesaj özelliğini kullanmak için bir secret key gerekir
@@ -66,10 +70,44 @@ def register():
 
         flash("Kayıt Başarılı...","success")#succes tipinde flash messagı kullanılacak
 
-        return redirect(url_for("index")) #index fonksiyonunun adresine git
+        return redirect(url_for("login")) #index fonksiyonunun adresine git
     else:
         return render_template("register.html",form = form) 
-     
+
+@app.route("/login",methods = ["GET","POST"])
+def login():
+    form = LoginForm(request.form)
+    
+    if request.method == "POST":
+        username = form.username.data
+        password_entered = form.password.data
+
+        cursor = mysql.connection.cursor()
+        
+        sorgu = "select * from users where username = %s"
+
+        sonuc = cursor.execute(sorgu,(username,))
+
+        if sonuc > 0:
+            data = cursor.fetchone()
+
+            real_password = data["password"]
+
+            if sha256_crypt.verify(password_entered,real_password):
+                flash("Giriş Başarılı...","success")
+
+                return redirect(url_for("index"))
+            else:
+                flash("Parola yanlış...","danger")
+
+                return redirect(url_for("login"))
+        else:
+            flash("Kullanıcı bulunamadı","danger")
+
+            return redirect(url_for("login"))
+    else:
+        return render_template("login.html",form = form)
+
 def dinamik(id):
     return "dinamik url id : " + id
 if __name__ == "__main__":
