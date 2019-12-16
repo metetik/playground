@@ -45,7 +45,7 @@ class LoginForm(Form):
 class ArticleForm(Form):
     title = StringField("Makale Başlığı",validators = [validators.Length(min = 5,max = 100)])
 
-    content = TextAreaField("Makale İçeriği",validators = [validators.Length(min = 5,max = 100)])
+    content = TextAreaField("Makale İçeriği",validators = [validators.Length(min = 5,max = 1000)])
 
 app = Flask("__name__")
 
@@ -142,6 +142,17 @@ def logout():
 @app.route("/dashboard")
 @login_required
 def dashboard():
+    cursor = mysql.connection.cursor()
+    sorgu = "select * from articles where author = %s"
+    sonuc = cursor.execute(sorgu,(session["username"],))
+    
+    if sonuc > 0:
+        articles = cursor.fetchall()
+
+        return render_template("dashboard.html",articles = articles)
+    else:
+        render_template("dashboard.html")
+
     return render_template("dashboard.html")
 
 @app.route("/addarticle",methods = ["GET","POST"])
@@ -163,7 +174,108 @@ def addarticle():
         return redirect(url_for("dashboard"))
     else:
         return render_template("addarticle.html",form = form)
-def dinamik(id):
-    return "dinamik url id : " + id
+
+@app.route("/articles",methods = ["GET","POST"])
+def articles():
+    cursor = mysql.connection.cursor()
+    sorgu = "select * from articles"
+    sonuc = cursor.execute(sorgu)
+
+    if sonuc > 0:
+        articles = cursor.fetchall()
+        return render_template("articles.html",articles = articles)
+    else:
+        return render_template("articles.html")
+
+#makale görüntüleme
+@app.route("/article/<string:id>")
+def article(id):
+    cursor = mysql.connection.cursor()
+    sorgu = "select * from articles where id = %s"
+    sonuc = cursor.execute(sorgu,(id,))
+    
+    if sonuc > 0:
+        article = cursor.fetchone()
+
+        return render_template("article.html",article = article)
+    else:
+        return render_template("article.html")
+
+#makale silme
+@app.route("/delete/<string:id>")
+@login_required
+def delete(id):
+    cursor = mysql.connection.cursor()
+    sorgu = "select * from articles where id = %s and author = %s"
+    sonuc = cursor.execute(sorgu,(id,session["username"]))
+    
+    if sonuc > 0:
+        sorgu2 = "delete from articles where id = %s"
+        cursor.execute(sorgu2,(id,))
+        mysql.connection.commit()
+
+        return redirect(url_for("dashboard"))
+    else:
+        flash("Böyle bir makale yok veya makaleyi silmeye yetkiniz yok...","danger")
+
+        return redirect(url_for("index"))
+
+#makale güncelleme
+@app.route("/edit/<string:id>",methods = ["GET","POST"])
+@login_required
+def update(id):
+    if request.method == "GET":
+        cursor = mysql.connection.cursor()
+
+        sorgu = "select * from articles where id = %s and author = %s"
+        sonuc = cursor.execute(sorgu,(id,session["username"]))
+
+        if sonuc == 0:
+            flash("Böyle bir makale yok veya bu işleme yetkiniz yok","danger")
+        
+            return redirect(url_for("index"))
+        else:
+            article = cursor.fetchone()
+            form = ArticleForm()
+            form.title.data = article["title"]
+            form.content.data = article["content"]
+
+            return render_template("update.html",form = form)
+    else:
+        form = ArticleForm(request.form)
+        
+        newTitle = form.title.data
+        newContent = form.content.data
+        
+        cursor = mysql.connection.cursor()
+        sorgu = "update articles set title = %s,content = %s where id = %s"
+        cursor.execute(sorgu,(newTitle,newContent,id))
+        mysql.connection.commit()
+
+        flash("Makale başarıyla güncellendi...","success")
+        return redirect(url_for("dashboard"))
+
+@app.route("/search",methods = ["GET","POST"])
+def search():
+    if request.method == "GET":
+        return redirect(url_for("index"))
+    else:
+        keyword = request.form.get("keyword")
+
+        print(keyword)
+        
+        cursor = mysql.connection.cursor()
+        sorgu = "select * from articles where title like '%" +keyword+ "%'"
+        sonuc = cursor.execute(sorgu)
+
+        if sonuc == 0:
+            flash("Makale bulunamadı","primary")
+            
+            return redirect(url_for("articles"))
+        else:
+            articles = cursor.fetchall()
+
+            return render_template("articles.html",articles = articles)
+
 if __name__ == "__main__":
     app.run(debug= True)
