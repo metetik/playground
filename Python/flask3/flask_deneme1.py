@@ -5,6 +5,7 @@ from flask_mysqldb import MySQL
 from wtforms import Form,StringField,TextAreaField,PasswordField,validators
 from passlib.hash import sha256_crypt
 from functools import wraps
+
 #Kullanıcı giriş decorator'ı
 def login_required(f):
     @wraps(f)
@@ -40,6 +41,11 @@ class RegisterForm(Form):
 class LoginForm(Form):
     username = StringField("Kullanıcı Adı")      
     password = PasswordField("Parola")
+
+class ArticleForm(Form):
+    title = StringField("Makale Başlığı",validators = [validators.Length(min = 5,max = 100)])
+
+    content = TextAreaField("Makale İçeriği",validators = [validators.Length(min = 5,max = 100)])
 
 app = Flask("__name__")
 
@@ -138,6 +144,25 @@ def logout():
 def dashboard():
     return render_template("dashboard.html")
 
+@app.route("/addarticle",methods = ["GET","POST"])
+def addarticle():
+    form = ArticleForm(request.form)
+    
+    if request.method == "POST" and form.validate():
+        title = form.title.data
+        content = form.content.data
+
+        cursor = mysql.connection.cursor()
+        sorgu = "insert into articles(title,author,content) values(%s,%s,%s)"
+        cursor.execute(sorgu,(title,session["username"],content))
+        mysql.connection.commit()
+        cursor.close()
+
+        flash("Makale başarıyla eklendi","success")
+
+        return redirect(url_for("dashboard"))
+    else:
+        return render_template("addarticle.html",form = form)
 def dinamik(id):
     return "dinamik url id : " + id
 if __name__ == "__main__":
