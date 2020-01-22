@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "goruntu-isleme-262706",
+  "private_key_id": "84f9911b88acfc04ffa3307c7e076bb0b5b0498a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDNXzX005wsRDtB\ny1s+6xtd3ARzSFQ/0/Y4P4T7JcTw/dVx7PYLmi7omsRMrK8zV6RSx/kXe/hLxxqX\nq+gHjwCOEf7triSzs623oPT0XUsW43udsl9t15RGC9fOre8Nxx0WDm6yGqTkCx1A\nRMMMKejSQR9VEscRh8fFqFrBtma/aMbM+HEMbOwULysjPUgaNDV63qXwBB7W5YEj\ngqyEaWcJyr9J4d29BYlVguqRv8enFjjiRHJxRxy/mCN2m3S7btridsFHqs5KiVmV\nw+7bce4pgk2cLzoLSwsCGF/bJU8vRur9Vq/Q8NsYBeGB5cRFG9c/W9IzwUFax1Lz\noi1FKq5pAgMBAAECggEAGA6oJmbHa5QOkPV+Wc92pDcKumplnBh7RjmCnVzeRhCl\n+TN12wQTrKG8jvLHjy8cC6prLmoSOuY24j977a69tOa8wyDcIcTRe6o6J4nqKuM4\n7s8fSKGxN8dZX1eWojmJ2bSVGP3wBNqccZPceUdLg52nSvLpKM+MAkZnYzu3q4In\nyQ0T1Tcx5bbrqJdW98zNyOjFVjUAndAM7g9Ycgm1EyRABgo2fOEE5iaGm5BQnT6N\nfhpN2P9nKT+HoNy7GgC+ow6otyVrL/voqRE2clW3MvEIMR9lRLzrZibNf1wspisO\nsZYHiAHsNh0lvESmQZ1YCuKRFY/vTGUsN8hhwRN4hQKBgQDv/EmyKYR2lQ/2ZapM\nVMX5uW4EG9SF4FNLu/+EzfOhNdJpbHkYS9jh0VAzAjufz0RX8QROBDE0Cp3EmuBV\nfbUDXrMp0NaFOOOJ3j6DkebEy3Xz7ggbDizDz7f2jD2CoWV9f2EMPjLsvpPrTBkG\nfBq2m7kAAAcNNR/L+gHbgYLHNwKBgQDbE50CXp9Ci93EnO2ZqVxOkpHeyWdbx10h\nOeKkalNBaia29bX73DuRTVRFg1juzVfwl+ObmI+Vpx3BUSozMO0S6UKupXnwYzWt\n8BSw9oF5LTiyT0vShWYI789/8enVNn1TmAMj7A/KACo9H7636EvvT/MewtDiRVFW\n/b2/DvHHXwKBgGtTG642zQuvPDVIYDHE08kLuXzS6Wd53CaJjAtbg7I7/L6zCTDp\ncrQCxOga/olIy1q86dzuGQcaHFZ5oQv6rQI1ztBLmjR4LaJRpwl2LYsjJrwRXsSi\nwThM5Au5yiRqg5XtanxsMKAZ1tMq9CInTFcQK1spp/2rHW4+f6goMlFfAoGBALnu\nzYUjVbufBZtHLQkLioJNN2yENyrX65y1ijvM2dhdBXqm08tswUmy/eD5d1NGCGr0\nHoMCWmrDKSfXgR9tWOiB/MxJOVLigL6dUpJWxNBZpxL+5fVIrq7LCasnYDRLSNbX\n32JviX8B4Nd7x9xCVaBIlKj441wHRN+1/4LWZjG1AoGACQdgiokVKy5+aobyhFy1\nGCbi5uqfrv7y3g76nO1TgBatH/U6IFsJEe20U1HLUMHFcCHBUfEu0yZAxGlXPvym\nqS6NwNprsaGHUsReXLYlb4qOBpu5Wh8BgRVZOieBXaRzmvbRpujkmYi64TNgzOpu\nylJG6AhA5jCXOEeePGM7ig4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "service1@goruntu-isleme-262706.iam.gserviceaccount.com",
+  "client_id": "117620462912109525136",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service1%40goruntu-isleme-262706.iam.gserviceaccount.com"
+}

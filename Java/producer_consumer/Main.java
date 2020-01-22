@@ -1,43 +1,48 @@
-import java.util.Random;
+//  ilkel çözüm deadlock oluyor..
+//  1 : dolu , 2 : boş 
 
 class Main{
-    int counter = 0;
-    int buffer_size = 9;
-    int[] buffer = new int[10];
+    public static int counter = 0;
+    public static int buffer_size = 9;
+    public static int[] buffer = new int[10];
     
     public static void main(String[] args) {
-        Main m = new Main();
-
         for(int i = 0;i<10;i++){
-            m.buffer[i] = -1;
+            buffer[i] = 0;
         }
 
-        new Thread(new Runnable(){
+        new Thread(new Runnable(){//uretici
             @Override
             public void run() {
-                Random random = new Random();
-
                 while(true){
-                    while(m.counter == m.buffer_size);//Eğer counter buffer size'a eşitse bekle
+                    while(counter == buffer_size);
                     
-                    int uretilen_sayi = random.nextInt(10);
-        
-                    m.buffer[++m.counter] = uretilen_sayi;
-        
-                    System.out.println("Üretildi : "+(m.counter)+", "+ (m.buffer[m.counter]));
+                    buffer[counter] = 1;
+                    
+                    counter++;
+                    
+                    System.out.println("Üretildi \n"
+                                    +  "Counter : "+counter
+                                    +  "\tBuffer : "+buffer[0]+buffer[1]+buffer[2]+buffer[3]+buffer[4]
+                                    +   buffer[5]+buffer[6]+buffer[7]+buffer[8]+buffer[9]);
                 }
             }
         }).start();
         
-        new Thread(new Runnable(){
+        new Thread(new Runnable(){//tüketici
             @Override
             public void run() {
                 while(true){
-                    while(m.counter == 0);//Eğer m.counter 0'a eşitse bekle
-        
-                    m.buffer[--m.counter] = -1;
-        
-                    System.out.println("Tüketildi : "+m.counter+","+m.buffer[m.counter]);
+                    while(counter == 0);
+                    
+                    buffer[counter] = 0;
+
+                    counter--;
+
+                    System.out.println("Tüketildi\n"
+                                    +   "Counter : "+counter
+                                    +  "\tBuffer : "+buffer[0]+buffer[1]+buffer[2]+buffer[3]+buffer[4]
+                                    +   buffer[5]+buffer[6]+buffer[7]+buffer[8]+buffer[9]);
                 }
             }
         }).start();
