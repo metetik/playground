@@ -1,22 +1,36 @@
 import React, { Component } from "react";
-import {ListGroup,ListGroupItem,Badge} from "reactstrap";
+import {ListGroup,ListGroupItem} from "reactstrap";
 
 export default class CategoryList extends Component {
-  render() {
+    state = { 
+      categories : []
+    }
+
+    componentDidMount(){
+      this.getCategories();
+    }
+    
+    getCategories = () =>{
+      fetch("http://localhost:3000/categories")
+      .then(response => response.json())
+      .then(data=>this.setState({categories:data}));
+    }
+    render() {
     return (
-      <div>
-        <h3>Category List</h3>
+      <div> 
+        <h3>{this.props.info.title}</h3>
         <ListGroup>
-          <ListGroupItem className="justify-content-between">
-            Cras justo odio <Badge pill>14</Badge>
-          </ListGroupItem>
-          <ListGroupItem className="justify-content-between">
-            Dapibus ac facilisis in <Badge pill>2</Badge>
-          </ListGroupItem>
-          <ListGroupItem className="justify-content-between">
-            Morbi leo risus <Badge pill>1</Badge>
-          </ListGroupItem>
+            {this.state.categories.map(category=> (
+                <ListGroupItem 
+                onClick={() => this.props.changeCategory(category)} 
+                key={category.id}
+                >
+                  {category.categoryName}
+                </ListGroupItem>
+            ))}
         </ListGroup>
+        
+        <h3>{this.props.currentCategory}</h3>
       </div>
     );
   }

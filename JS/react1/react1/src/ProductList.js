@@ -1,23 +1,34 @@
 import React, { Component } from "react";
-import {ListGroup,ListGroupItem,Badge} from "reactstrap";
+import { Table } from "reactstrap";
 
 export default class ProductList extends Component {
+
   render() {
     return (
-      <div>
-        <h3>Product List</h3>
-        <ListGroup>
-          <ListGroupItem className="justify-content-between">
-            Cras justo odio <Badge pill>14</Badge>
-          </ListGroupItem>
-          <ListGroupItem className="justify-content-between">
-            Dapibus ac facilisis in <Badge pill>2</Badge>
-          </ListGroupItem>
-          <ListGroupItem className="justify-content-between">
-            Morbi leo risus <Badge pill>1</Badge>
-          </ListGroupItem>
-        </ListGroup>
-      </div>
+      <Table>
+        <thead>
+          <tr>
+            <th>Product ID</th>
+            <th>Category ID</th>
+            <th>Product Name</th>
+            <th>Quantity per Unit</th>
+            <th>Unit Price</th>
+            <th>Unit in Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.props.products.map(product => (
+            <tr key={product.id}>
+              <th scope="row">{product.id}</th>
+              <td>{product.categoryId}</td>
+              <td>{product.productName}</td>
+              <td>{product.quantityPerUnit}</td>
+              <td>{product.unitPrice}</td>
+              <td>{product.unitsInStock}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     );
   }
 }
