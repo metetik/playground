@@ -1,0 +1,4 @@
+ayse,hacettepe
+kerim,odtu
+turan,ankara
+zeynep,bilkent

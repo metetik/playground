@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Table } from "reactstrap";
+import { Button,Table } from "reactstrap";
 
 export default class ProductList extends Component {
-
+  addToCart = (product) => {
+    alert(product.productName);
+  }
   render() {
     return (
       <Table>
@@ -25,6 +27,7 @@ export default class ProductList extends Component {
               <td>{product.quantityPerUnit}</td>
               <td>{product.unitPrice}</td>
               <td>{product.unitsInStock}</td>
+              <td><Button color="info" onClick={()=>this.addToCart(product)}>Ekle</Button></td>
             </tr>
           ))}
         </tbody>
