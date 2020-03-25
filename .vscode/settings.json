@@ -1,4 +1,13 @@
+/*{
+    "python.pythonPath": "C:\\Program Files (x86)\\Python38-32\\python.exe",
+    "python.jediEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.banditEnabled": false,
+    "python.linting.mypyEnabled": false
+}*/
+
 {
-    "python.pythonPath": "C:\\Users\\Melih karakoç\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe",
-    "python.jediEnabled": true
-}
+    "python.pythonPath":"D:/tetik/playground/Python/django/django2/sanort/bin/python",
+    "python.linting.pylintPath": "D:/tetik/playground/Python/django/django2/sanort/bin/pylint"
+ }
