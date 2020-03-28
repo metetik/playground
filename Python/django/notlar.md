@@ -10,7 +10,7 @@
     * Model : Veritabanı nesneleri
     * View : Arkaplanda çalışan metodlar
     * Template : Dinamik HTML sayfaları
-* ORM : Object to Relational Mapping. SQl kodu yazmadan veritabanını yönetebilmek.
+* ORM : Object to Relational Mapping. SQL kodu yazmadan veritabanını yönetebilmek.
 ---
 Django resmi dökümanları : docs.djangoproject.com
 ### Django için gerekenler
@@ -176,14 +176,39 @@ Django resmi dökümanları : docs.djangoproject.com
     * home>views.py :
 
         `def home(request):`
-            <br>&emsp;&emsp;`if request.user.is_authenticated:`
-                <br>&emsp;&emsp;&emsp;&emsp;`context = {"user" : request.user.username}`
-            <br>&emsp;&emsp;`else:`
-                <br>&emsp;&emsp;&emsp;&emsp;`context = {"user" : "Misafir"}`
-            <br><br>&emsp;&emsp;`return render(request,"home.html",context)`
+        <br>&emsp;&emsp;`if request.user.is_authenticated:`
+        <br>&emsp;&emsp;&emsp;&emsp;`context = {"user" : request.user.username}`
+        <br>&emsp;&emsp;`else:`
+        <br>&emsp;&emsp;&emsp;&emsp;`context = {"user" : "Misafir"}`
+        <br><br>&emsp;&emsp;`return render(request,"home.html",context)`
     * templates>home.html :
 
         `<h1>Hoşgeldiniz,{{ user }}</h1>`
+## Django shell
+* >python manage.py shell
+> `>>> from post.models import Post`<br>
+>`>>> from django.utils import timezone`<br>
+* Tüm postları listeleme :
+> `>>> Post.objects.all()`
+* Post ekleme
+> `>>> su_an = timezone.now()`<br>
+> `>>> Post.objects.create(title="deneme1",content="deneme1 içerik",publishing_date=su_an)`
+
+veya 
+> `>>> nesne = post()`<br>
+> `>>> nesne.title = "deneme2"`<br>
+> `>>> nesne.content = "deneme2 içerik"`<br>
+> `>>> nesne.publishing_date = su_an`<br>
+> `>>> Post.objects.all()`
+
+* Post getirme
+> `>>> a = Post.objects.get(id=1)`
+
+* Post silme
+> `>>> a.delete()`
+ 
+* Filtreleme
+> `>>> Post.objects.filter(title__contains='deneme')`
     
 ## Kaynaklar
 * [Barış Aslan Youtube Oynatma Listesi](https://www.youtube.com/playlist?list=PLPrHLaayVkhny4WRNp05C1qRl1Aq3Wswh) - [GitHub Kodları](https://github.com/barissaslan/django-dersleri)
