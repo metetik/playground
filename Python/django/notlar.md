@@ -21,7 +21,8 @@ Django resmi dökümanları : docs.djangoproject.com
 ### Virtualenv Kurulumu
 1. >pip install virtualenv
 2. >virtualenv sanort
-(sanort : sanal ortamımızın adı)
+
+    (sanort : sanal ortamımızın adı)
 3. Sanalortamı aktive etmek :
 
     Linux :
@@ -56,8 +57,8 @@ Django resmi dökümanları : docs.djangoproject.com
 
 4. Server'i çalıştır
 >python manage.py runserver
-* Varsayılan port 8000'dir.8080'de çalıştırmak için : 
-> python manage.py runserver 8080
+* Varsayılan port 8000'dir. 8080'de çalıştırmak için : 
+>python manage.py runserver 8080
 
 5. Migration
 * Migration : uygulamaların içindeki verileri veritabanına taşımak.
@@ -104,11 +105,85 @@ Django resmi dökümanları : docs.djangoproject.com
     * Admin paneline yeni özellikler eklemek için örnek kod :
     <br>`class PostAdmin(admin.ModelAdmin):`
     <br>&emsp;&emsp;`list_display = ['title','publishing_date']`
-    <br>&emsp;&emsp;`list_display_links = ['title',&emsp;&emsp;'publishing_date']`
+    <br>&emsp;&emsp;`list_display_links = ['title','publishing_date']`
     <br>&emsp;&emsp;`list_filter = ['publishing_date']`
     <br>&emsp;&emsp;`search_fields = ['title','content']`
     <br>&emsp;&emsp;`class Meta:`
         <br>&emsp;&emsp;&emsp;&emsp;`model = Post`
+        
+        * list_display : listeleme ekranında görünecekler
+        * list_display_links : listeleme ekranında link olanlar
+        * list_filter : filtreleme
+        * search_fields : arama alanı
 
+## View'ler
+1. Anasayfa için bir uygulama oluşturalım.
+
+2. Anasayfa uygulamasındaki views.py'nin içine anasayfanın URL fonksiyonunu ekleyelim:
+
+    `def home(request)`
+    <br>&emsp;&emsp; `return HttpResponse("<h1>Anasayfa</h1>")`
+
+3. Fonksiyonu urls.py'ye ekleyelim:
+     
+     `from home.views import home`
+     <br>&emsp;&emsp;&emsp;&emsp;`.....`
+     <br>&emsp;&emsp;`path('', home)`
+4. Post uygulaması içinde farklı işler gören farklı adresler var(index, create, delete gibi). Bu adresleri tanımlamak için önce post/urls.py'ye şu kodu ekleyelim : 
+     
+    `from views import *`
+    <br>&emsp;&emsp;&emsp;&emsp;`.....`
+    <br>&emsp;&emsp;`path('', post_home),`
+    <br>&emsp;&emsp;`path('index/', post_index),`
+    <br>&emsp;&emsp;`path('detail/', post_detail),`
+    <br>&emsp;&emsp;`path('create/', post_create),`
+    <br>&emsp;&emsp;`path('update/', post_update),`
+    <br>&emsp;&emsp;`path('delete/', post_delete)`
+5. Bu adreslerin view'lerini yazalım :
+
+    `def post_home(request):`
+    <br>&emsp;&emsp;`return HttpResponse("<h1>Post Home</h1>")`
+    <br>`def post_index(request):`
+    <br>&emsp;&emsp;`return HttpResponse("<h1>Post Index</h1>")`
+    <br>`def post_detail(request):`
+    <br>&emsp;&emsp;`return HttpResponse("<h1>Post Detail</h1>")`
+    <br>`def post_create(request):`
+    <br>&emsp;&emsp;`return HttpResponse("<h1>Post Create</h1>")`
+    <br>`def post_update(request):`
+    <br>&emsp;&emsp;`return HttpResponse("<h1>Post Update</h1>")`
+    <br>`def post_delete(request):`
+    <br>&emsp;&emsp;`return HttpResponse("<h1>Post Delete</h1>")`
+6. Projenin içindeki urls.py'nin içine şu kodu ekleyelim :
+
+    `path('post/', include('post.urls'))`
+
+## Templates
+
+1. Proje dizini içerisinde templates adında bir klasör oluşturalım.
+
+2. templates kalsörünü projenin tanıması için settings.py>`TEMPLATES`>`DIRS`'e ekleyelim : 
+
+    `'DIRS': [BASE_DIR+'/templates'],`
+
+3. templates klasörü içinde home.html dosyasını oluşturalım.
+
+4. home>views.py ye şu kodu ekleyelim : 
+
+    `return render(request,"home.html",{})`
+
+## Sayfaya içerik göndermek
+* Anasayfa'da eğer oturum açılmışsa kullanıcı adını yazması değilse misafir yazması için : 
+    * home>views.py :
+
+        `def home(request):`
+            <br>&emsp;&emsp;`if request.user.is_authenticated:`
+                <br>&emsp;&emsp;&emsp;&emsp;`context = {"user" : request.user.username}`
+            <br>&emsp;&emsp;`else:`
+                <br>&emsp;&emsp;&emsp;&emsp;`context = {"user" : "Misafir"}`
+            <br><br>&emsp;&emsp;`return render(request,"home.html",context)`
+    * templates>home.html :
+
+        `<h1>Hoşgeldiniz,{{ user }}</h1>`
+    
 ## Kaynaklar
 * [Barış Aslan Youtube Oynatma Listesi](https://www.youtube.com/playlist?list=PLPrHLaayVkhny4WRNp05C1qRl1Aq3Wswh) - [GitHub Kodları](https://github.com/barissaslan/django-dersleri)
