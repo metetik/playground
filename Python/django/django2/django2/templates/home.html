@@ -2,6 +2,12 @@
 {% load static %}
 {% block title %}Anasayfa{% endblock title %}
 {% block body %}
-    <img src="{% static 'thumb.jpg' %}" alt="My image">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-sm-4 col-xs-6" style="background-color: red;">1.sütun</div>
+            <div class="col-md-4 col-sm-8 col-xs-6" style="background-color: blue;">2.sütun</div>
+        </div>
+    </div>
+    <img src="{% static 'img/thumb.jpg' %}" alt="My image" width=360 height=240>
     <h1>Hoşgeldiniz,{{ user }}</h1>
 {% endblock body %}
