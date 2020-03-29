@@ -16,7 +16,10 @@
     "python.linting.mypyEnabled": false
 }*/
 {
-    "python.pythonPath":"D:/tetik/playground/Python/django/django2/sanort/bin/python",
+    "python.pythonPath":"D:/tetik/playground/Python/django/django2/sanort/bin/python3",
     "python.linting.pylintPath": "D:/tetik/playground/Python/django/django2/sanort/bin/pylint",
-    "python.terminal.activateEnvironment": false
+    "python.terminal.activateEnvironment": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.banditEnabled": true
 }

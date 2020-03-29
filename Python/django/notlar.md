@@ -209,6 +209,9 @@ veya
  
 * Filtreleme
 > `>>> Post.objects.filter(title__contains='deneme')`
-    
+
+## Notlar
+* regular expression path : re_path
+* get metoduyla giden istekler adres çubuğunda görülür.Post metoduyla giden istekler görülmez.
 ## Kaynaklar
 * [Barış Aslan Youtube Oynatma Listesi](https://www.youtube.com/playlist?list=PLPrHLaayVkhny4WRNp05C1qRl1Aq3Wswh) - [GitHub Kodları](https://github.com/barissaslan/django-dersleri)
