@@ -2,9 +2,25 @@
 {% block title %}Detay-{{post.title}}{% endblock title %}
 {% block body %}
     {% include "includes/messages.html" %}
-    {{post.id}}<br>
-    {{post.title}}<br>
-    {{post.content}}<br>
-    {{post.publishing_date}}
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="card col-md-8 text-center">
+                <div class="card-body">
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" class="img-responsive">
+                    {% endif %}
+                    <h5 class="card-title">{{post.id}}</h5>
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text">{{post.content|linebreaks}}</p>
+                    <h6 class="card-subtitle mb-2 text-muted">{{post.publishing_date | timesince}} önce oluşturuldu</h6>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <a href="{{post.get_update_url}}" class="btn btn-dark">Güncelle</a>
+                        <a href="{{post.get_delete_url}}" class="btn btn-dark">Sil</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 {% endblock body %}
