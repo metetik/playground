@@ -12,9 +12,11 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'post:index' %}">Blog <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'post:create' %}">Yazı Ekle <span class="sr-only">(current)</span></a>
-      </li>
+      {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'post:create' %}">Yazı Ekle <span class="sr-only">(current)</span></a>
+        </li>
+      {% endif %}
     </ul>
     <form class="form-inline my-2 my-md-0" role="search" method="GET" action="">
       <input class="form-control" type="text" placeholder="Search" aria-label="Search">
