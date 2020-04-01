@@ -1,19 +1,34 @@
 from django.shortcuts import render,HttpResponse,get_object_or_404,HttpResponseRedirect,redirect,Http404
 from .models import Post
-from .forms import PostForm
+from .forms import PostForm,CommentForm
 from django.contrib import messages
+from django.db.models import Q
 
 def post_home(request):
     return HttpResponse("<h1>Post Home</h1>")
 
 def post_index(request):
     posts = Post.objects.all()
+    query = request.GET.get("q")
+    if query:
+        posts = posts.filter(
+            Q(title__icontains=query)|
+            Q(content__icontains=query)
+        ).distinct()
     return render(request,"post/index.html",{'posts' : posts})
 
 def post_detail(request,id):
     post = get_object_or_404(Post,id = id)
+
+    form = CommentForm(request.POST or None)
+    if form.is_valid():
+        comment = form.save(commit=False)
+        comment.post = post
+        comment.save()
+        return HttpResponseRedirect(post.get_absolute_url())
     context = {
         'post' : post,
+        'form' : form
     }
     return render(request,"post/detail.html",context)
 
@@ -35,7 +50,9 @@ def post_create(request):
 #   yukardaki uzun kodun aynısı
     form = PostForm(request.POST or None, request.FILES or None)
     if form.is_valid():
-        post = form.save()
+        post = form.save(commit=False)
+        post.user = request.user #user 
+        post.save()
         messages.success(request, "Başarılı bir şekilde oluşturdunuz..")
         return HttpResponseRedirect(post.get_absolute_url())
     context = {

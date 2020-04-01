@@ -9,6 +9,7 @@
                 <div class="card md-6">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{post.title}}</h5>
+                        <h6 class="card-title">Yazar : {{post.user}}</h6>
                         <p class="card-text">{{post.content|safe|linebreaks|truncatechars:200}}</p>
                         <h6 class="card-subtitle mb-2 text-muted">{{post.publishing_date}}</h6>
                         <div class="btn-group" role="group" aria-label="...">

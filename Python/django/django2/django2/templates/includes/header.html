@@ -16,10 +16,21 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'post:create' %}">Yazı Ekle <span class="sr-only">(current)</span></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts:logout' %}">Çıkış Yap<span class="sr-only">(current)</span></a>
+        </li>
+      {% endif %}
+      {% if  not request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts:register' %}">Kayıt Ol<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts:login' %}">Giriş Yap<span class="sr-only">(current)</span></a>
+        </li>
       {% endif %}
     </ul>
     <form class="form-inline my-2 my-md-0" role="search" method="GET" action="">
-      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      <input class="form-control" type="text" name="q" placeholder="Search" aria-label="Search">
     </form>
   </div>
 </nav>

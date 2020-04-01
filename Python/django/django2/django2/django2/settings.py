@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_cleanup',
     'ckeditor',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +141,6 @@ CKEDITOR_CONFIGS = {
         'width': '100%',
     },
 }
+
+RECAPTCHA_PUBLIC_KEY = '6LfVvuUUAAAAAEOJJ3ebRisjN83wllOjEt0MMbA3'
+RECAPTCHA_PRIVATE_KEY = '6LfVvuUUAAAAABUgJ24RIhd7kw5jEph5Oryya9bw'
