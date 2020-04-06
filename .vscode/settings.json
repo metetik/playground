@@ -16,7 +16,7 @@
     "python.linting.mypyEnabled": false
 }*/
 {
-    "python.pythonPath":"D:/tetik/playground/Python/django/django2/sanort/bin/python3",
+    "python.pythonPath":"C:\\Program Files (x86)\\Python38-32\\python.exe",
     "python.linting.pylintPath": "D:/tetik/playground/Python/django/django2/sanort/bin/pylint",
     "python.terminal.activateEnvironment": true,
     "python.linting.pylintEnabled": true,
