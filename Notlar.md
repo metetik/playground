@@ -15,6 +15,6 @@
 
 >git add . : dosyaları ekle
 
->git commit -m : dosyaları commit et
+>git commit -m "mesaj": dosyaları commit et
 
 >git push : github'a gönder.
