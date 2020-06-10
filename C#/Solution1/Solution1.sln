@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project1", "project1\project1.csproj", "{B23ECF14-44FA-4F73-A984-755455DBCC08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "graf_deneme1", "graf_deneme1\graf_deneme1.csproj", "{78B7F317-2120-440D-99CE-2BE90829530D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B23ECF14-44FA-4F73-A984-755455DBCC08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B23ECF14-44FA-4F73-A984-755455DBCC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B23ECF14-44FA-4F73-A984-755455DBCC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B23ECF14-44FA-4F73-A984-755455DBCC08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78B7F317-2120-440D-99CE-2BE90829530D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B7F317-2120-440D-99CE-2BE90829530D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78B7F317-2120-440D-99CE-2BE90829530D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78B7F317-2120-440D-99CE-2BE90829530D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07449775-2EAC-4082-9460-49774CF4093F}
+	EndGlobalSection
+EndGlobal

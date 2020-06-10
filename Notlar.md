@@ -18,3 +18,15 @@
 >git commit -m "mesaj": dosyaları commit et
 
 >git push : github'a gönder.
+
+# HTML
+* `<pre>` :  altsatırları gösterir.
+* `<a ...... target="_blank">` : yeni sekmede aç
+* `<img ....... alt="resim bulunamadı">`
+* * block-level etiket : sayfanın genişliğini kaplayan etiket.
+  * inline-level etiket : sadece bloğu kadar yer kaplayan etiket.
+  * height ve width sadece block level etiketlerle kullanılır.
+* `.....url....#id` : tıklayınca id'si id olan elemente git  
+
+# CSS
+* en genel seçici en üste konur . En özel seçici en alta konur.

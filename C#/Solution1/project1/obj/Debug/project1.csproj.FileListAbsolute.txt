@@ -1,0 +1,6 @@
+D:\tetik\playground\C#\Solution1\project1\bin\Debug\project1.exe.config
+D:\tetik\playground\C#\Solution1\project1\bin\Debug\project1.exe
+D:\tetik\playground\C#\Solution1\project1\bin\Debug\project1.pdb
+D:\tetik\playground\C#\Solution1\project1\obj\Debug\project1.csprojAssemblyReference.cache
+D:\tetik\playground\C#\Solution1\project1\obj\Debug\project1.exe
+D:\tetik\playground\C#\Solution1\project1\obj\Debug\project1.pdb

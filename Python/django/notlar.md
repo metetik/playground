@@ -213,5 +213,14 @@ veya
 ## Notlar
 * regular expression path : re_path
 * get metoduyla giden istekler adres çubuğunda görülür.Post metoduyla giden istekler görülmez.
+
+#### Shell'de kullanıcı oluşturma
+>`>>> from django.contrib.auth.models import User`<br>
+>`>>> user=User.objects.create_user('foo', password='bar')`<br>
+>`>>> user.is_superuser=False`<br>
+>`>>> user.is_staff=False`<br>
+>`>>> user.save()`<br>
+
+* form dosyalarından dosya almak için form tagina şu ayarı yapmak gerekir : `enctype="multipart/form-data"`
 ## Kaynaklar
 * [Barış Aslan Youtube Oynatma Listesi](https://www.youtube.com/playlist?list=PLPrHLaayVkhny4WRNp05C1qRl1Aq3Wswh) - [GitHub Kodları](https://github.com/barissaslan/django-dersleri)
