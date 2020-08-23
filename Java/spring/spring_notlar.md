@@ -6,7 +6,7 @@
 * Eclipse => Window>Perspective>Open Perspective>Java
 * Spring jar dosyalarını eclipse'e ekle
 * Eclipse => java_project>new folder ==> "lib"
-* lib'in içine tüm jar'aları kopyala
+* lib'in içine tüm jar'ları kopyala
 * Eclipse => java_project>properties>java build path>libraries>add jars>tüm jar dosyalarını seç>apply and close
 
 ### Dependency Injection ve IoC
@@ -14,7 +14,10 @@
 * Alternatif işlemler için farklı class'lar oluşturulmalı ve bu class'lar bir ortak interface'i implement etmelidir.
 * Mesela bir spor yönetim sistemi içinde bir tane BaseballCoach sınıfı yerine, bir tane Coach interface'i ve onu implement eden bir BaseballCoach class'ı olmalıdır. Ki daha sonra başka basketbol için BasketballCoach class'ı yazıldığında Coach interface'ini implement etsin.
 * Spring container : Bir IoC container.Spring object factory ile object üretir. IoC ve Dependency Injection sağlar.
+* IoC container : Benim anladığım dependent class'ları üretme aracı.
+* _Çıplak class kalmamalı_ : tüm class'lar implementation yapmalıdır.
 * [Engin Demiroğ Dependency Injection](https://www.youtube.com/watch?v=YqDLfjE-mes)
+* Constructor injeciton
 
 ### Spring development process
 1. Configure your spring beans
@@ -39,3 +42,7 @@ A "Spring Bean" is simply a Java object. When Java objects are created by the Sp
 * bir class sadece bir kere extend edebilir. Ancak birden çok kez inherit edebilir.
 * parent class, child class'ların referansını tutabilir.
 * bir method'un override edilmesini istemiyorsak final anahtar kelimesi kullanılır.
+* abstract class'lar new'lenemez.
+* Interface'ler reference tutabilir.
+* Bir method'a reference'dan ulaşmak için o method'un static olması gerekir.
+* Ana class static olamaz. Ama inner class'lar olabilir.
