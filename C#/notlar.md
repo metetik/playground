@@ -39,6 +39,7 @@
 
 * C#'da foreach döngüsündeki döngü değişkeni değiştirilemez.
 
+## String
 * String metodları : 
     * string.Length
     * string.Clone()
@@ -52,6 +53,7 @@
     * string.ToUpper()
     * string.Replace()
     * string.Remove()
+* String'in başına "@" gelirse "\\"'ları yok sayar.
 
 ## C# OOP
 * C# Constructor => `Object obj = new Object{Id=2,Name="name"};
@@ -77,6 +79,8 @@
 
 * Abstract class : hem normal method hem de abstract method barındıran class.
     * Abstract class'dan obje oluşturulamaz.
+    * Abstract class'lar da birer inheritance'dır.
+
 * Access Modifiers
     * C#'da property'nin default access modifier private'dır.
     * private : sadece tanımlandığı class'da kullanılabilir.
@@ -84,10 +88,37 @@
     * public : her yerde kullanılabilir.
     * bir class ya public ya da internal'dır. Ancak bir nested class private olabilir.
     * internal : internal bir class, bağlı bulunduğu projede referans ihtiyacı olmadan kullanılabilir.
+    * Class'ların default access modifier'ı internal'dır.
     * public bir class başka bir projede import edildiğinde de kullanılabilir.
+    * private bir variable'ın bulunduğu class extend edilirse, private variable extend edildiği class'da kullanılamaz.
 
 * Constructor oluştrumak için kısayol : ctor yazıp 2xTab
 * private variable'lar standart olarak _ ile başlar
+* Constructor Injection : new içinde new
+
+* Static class
+    * C#'da static class'lar new'lenemez
+    * Static olmayan bir class'ın içinde static bir method olabilir. Bu methodu kullanmak için class'ı new'lemeye gerek yoktur.
+
+## Referans ve değer tipler
+* Değer Tipleri: “int”, “long”, “float”, “double”, “decimal”, “char”, “bool”, “byte”, “short”, “struct”, “enum”
+* Referans Tipleri: “string”, “object”, “class”, “interface”, “array”, “delegate”, “pointer”
+
+## Collections
+* ArrayList'e herhangi bir tipte nesne gönderilebilir.
+* List'e ise belirli tiplerde nesne gönderilebilir.
+* Collection Methodları
+    * Count : obje sayısı
+    * Add : obje ekle
+    * AddRange : objeleri array ile ekle 
+    * Clear : List'i temizle
+    * Contains : obje var mı?
+    * IndexOf : obje kaçıncı sırada
+    * Insert : sıraya ekle
+    * Remove : silme
+    * RemoveAll : `customers.RemoveAll(c=>c.FirstName="Muhammed");`
+    customer'ların içinde FirstName'i Muhammed olanların hepsini sil.
+
 
  ## Kaynak
  * https://www.udemy.com/course/komple-sifirdan-web-gelistirme-kursu/

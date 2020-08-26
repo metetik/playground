@@ -1,0 +1,14 @@
+C:\Users\acer\source\repos\project1\project4\bin\Debug\project4.exe.config
+C:\Users\acer\source\repos\project1\project4\bin\Debug\project4.exe
+C:\Users\acer\source\repos\project1\project4\bin\Debug\project4.pdb
+C:\Users\acer\source\repos\project1\project4\bin\Debug\EntityFramework.dll
+C:\Users\acer\source\repos\project1\project4\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\acer\source\repos\project1\project4\bin\Debug\EntityFramework.xml
+C:\Users\acer\source\repos\project1\project4\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\acer\source\repos\project1\project4\obj\Debug\project4.csprojAssemblyReference.cache
+C:\Users\acer\source\repos\project1\project4\obj\Debug\project4.Form1.resources
+C:\Users\acer\source\repos\project1\project4\obj\Debug\project4.Properties.Resources.resources
+C:\Users\acer\source\repos\project1\project4\obj\Debug\project4.csproj.GenerateResource.cache
+C:\Users\acer\source\repos\project1\project4\obj\Debug\project4.csproj.CopyComplete
+C:\Users\acer\source\repos\project1\project4\obj\Debug\project4.exe
+C:\Users\acer\source\repos\project1\project4\obj\Debug\project4.pdb
