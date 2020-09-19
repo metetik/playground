@@ -119,6 +119,26 @@
     * RemoveAll : `customers.RemoveAll(c=>c.FirstName="Muhammed");`
     customer'ların içinde FirstName'i Muhammed olanların hepsini sil.
 
+## Çok Katmanlı Mimari
+* Çok katmanlı mimariler ile projeyi katmanlara ayırarak daha düzenli yazılımlar geliştirilebilir.
+* Katmanlı mimari çok profesyonel ve verimli bir mimaridir.
+#### Çok kullanılan 3 katman :
+1. Arayüz Katmanı
+2. İş Katmanı
+3. Veriye Erişim Katmanı
 
- ## Kaynak
+## MVC
+* Controller : Gelen istekleri ve cevapları kontrol eder.
+* View : HTML,CSS,Javascript'i barındırır.
+* Model : Database modellerini barındırır.
+* Controller'ın içindeki methodlara aksiyon denir.
+
+## Asp.Net Core
+* ViewImports : varsayılan importlar
+* ViewStart : varsayılan layoutlar
+#### Dependency Injection
+* Bağımlılıkları minimize etmeye yarayan tasarım deseni
+
+ 
+## Kaynak
  * https://www.udemy.com/course/komple-sifirdan-web-gelistirme-kursu/

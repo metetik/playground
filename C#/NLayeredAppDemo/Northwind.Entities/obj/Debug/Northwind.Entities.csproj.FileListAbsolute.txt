@@ -1,0 +1,11 @@
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Entities\bin\Debug\Northwind.Entities.dll.config
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Entities\bin\Debug\Northwind.Entities.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Entities\bin\Debug\Northwind.Entities.pdb
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Entities\bin\Debug\EntityFramework.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Entities\bin\Debug\EntityFramework.xml
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Entities\bin\Debug\EntityFramework.SqlServer.xml
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Entities\obj\Debug\Northwind.Entities.csprojAssemblyReference.cache
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Entities\obj\Debug\Northwind.Entities.csproj.CopyComplete
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Entities\obj\Debug\Northwind.Entities.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Entities\obj\Debug\Northwind.Entities.pdb

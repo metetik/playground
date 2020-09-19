@@ -1,0 +1,14 @@
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\bin\Debug\Northwind.DataAcess.dll.config
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\bin\Debug\Northwind.DataAcess.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\bin\Debug\Northwind.DataAcess.pdb
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\bin\Debug\EntityFramework.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\bin\Debug\EntityFramework.SqlServer.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\bin\Debug\Northwind.Entities.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\bin\Debug\Northwind.Entities.pdb
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\bin\Debug\Northwind.Entities.dll.config
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\bin\Debug\EntityFramework.xml
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\bin\Debug\EntityFramework.SqlServer.xml
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\obj\Debug\Northwind.DataAcess.csprojAssemblyReference.cache
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\obj\Debug\Northwind.DataAcess.csproj.CopyComplete
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\obj\Debug\Northwind.DataAcess.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.DataAcess\obj\Debug\Northwind.DataAcess.pdb

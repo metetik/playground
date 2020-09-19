@@ -1,0 +1,17 @@
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\Northwind.Bussiness.dll.config
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\Northwind.Bussiness.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\Northwind.Bussiness.pdb
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\EntityFramework.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\EntityFramework.SqlServer.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\Northwind.DataAcess.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\Northwind.Entities.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\Northwind.DataAcess.pdb
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\Northwind.DataAcess.dll.config
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\Northwind.Entities.pdb
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\Northwind.Entities.dll.config
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\EntityFramework.xml
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\bin\Debug\EntityFramework.SqlServer.xml
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\obj\Debug\Northwind.Bussiness.csprojAssemblyReference.cache
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\obj\Debug\Northwind.Bussiness.csproj.CopyComplete
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\obj\Debug\Northwind.Bussiness.dll
+D:\tetik\playground\C#\NLayeredAppDemo\Northwind.Bussiness\obj\Debug\Northwind.Bussiness.pdb
