@@ -43,7 +43,9 @@
 * IoC container : Benim anladığım dependent class'ları üretme aracı.
 * _Çıplak class kalmamalı_ : tüm class'lar implementation yapmalıdır.
 * [Engin Demiroğ Dependency Injection](https://www.youtube.com/watch?v=YqDLfjE-mes)
-* Constructor injeciton
+* Class Injection Çözümleri : 
+    1. Constructor Injection
+    2. Setter Injection
 
 ### Spring development process
 1. Configure your spring beans

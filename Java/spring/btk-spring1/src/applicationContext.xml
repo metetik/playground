@@ -7,11 +7,15 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean id="database" class="btkSpring1.MsSqlCustomerDal">
+	<context:property-placeholder location="classpath:values.properties"/>
+	
+	<bean id="database" class="btkSpring1.MySqlCustomerDal">
+		<property name="connectionString" value="${database.connectionString}"></property>
 	</bean>
 	
 	<bean id="service" class="btkSpring1.CustomerManager">
-		<constructor-arg ref="database"/>
+<!-- 		<constructor-arg ref="database"/> -->
+		<property name="customerDal" ref="database"/>
 	</bean>
 </beans>
 
