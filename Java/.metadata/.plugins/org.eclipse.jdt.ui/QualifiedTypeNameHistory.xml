@@ -5,4 +5,18 @@
     <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
     <fullyQualifiedTypeName name="btkSpring1.ICustomerDal"/>
     <fullyQualifiedTypeName name="btkSpring1.ICustomerService"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
+    <fullyQualifiedTypeName name="btkSpring2.IocConfig"/>
+    <fullyQualifiedTypeName name="btkSpring2.ICustomerDal"/>
+    <fullyQualifiedTypeName name="btkSpring2.MsSqlCustomerDal"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="btkSpring2.ICustomerService"/>
+    <fullyQualifiedTypeName name="btkSpring2.CustomerManager"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.PropertySource"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="com.btkspring.btkspring4.Class1"/>
 </qualifiedTypeNameHistroy>

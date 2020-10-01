@@ -26,7 +26,7 @@
     > static {  }
 * [Erişim belirleyiciler](https://ramazanbiyikci.com.tr/java-erisim-belirleyiciler-access-modifiers/)
 
-## Spring
+# Spring
 * Servers kısmından tomcat'i eclipse'e bağla
 * Eclipse projesi oluştur
 * Eclipse => Window>Perspective>Open Perspective>Java
@@ -34,6 +34,12 @@
 * Eclipse => java_project>new folder ==> "lib"
 * lib'in içine tüm jar'ları kopyala
 * Eclipse => java_project>properties>java build path>libraries>add jars>tüm jar dosyalarını seç>apply and close
+
+
+### Spring Beans <br>
+A "Spring Bean" is simply a Java object. When Java objects are created by the Spring Container, then Spring refers to them as "Spring Beans".Spring Beans are created from normal Java classes .... just like Java objects.
+* Default Bean Id :
+    Classname = MyClass => Default Bean Id = myClass
 
 ### Dependency Injection ve IoC
 * Bir class başka bir classı kullandığında onu new'lememelidir.
@@ -46,11 +52,28 @@
 * Class Injection Çözümleri : 
     1. Constructor Injection
     2. Setter Injection
+* Spring IoC Teknikleri : 
+    1. XML File
+    2. Java Annotations
+    3. Java Source Code
+* Autowiring : dependency'lerin bir annotation yardımıyla otomatik inject edilmesi.
 
-### Spring development process
-1. Configure your spring beans
-2. Create a spring container(ApplicationContext)
-3. Retrieve beans from Spring Container
+    
+### Spring Bean Scopes
+* singleton : Create a single shared instance of the bean. Default scope.
+* prototype : Creates a new bean instance for each container request.
+* request : Scoped to an HTTP web request. Only used for web apps.
+* session : Scoped to an HTTP web session. Only used for web apps.
+* global : Scoped to a global HTTP web session. Only used for web apps. 
 
-* What is a Spring Bean? <br>
-A "Spring Bean" is simply a Java object. When Java objects are created by the Spring Container, then Spring refers to them as "Spring Beans".Spring Beans are created from normal Java classes .... just like Java objects.
+### Spring Bean Lifecycle Methods
+* You can add custom codes for your bean initialization or destruction.
+
+
+### Spring Boot
+* Spring boot devtools : projeyi kaydettiğinde server'i otomatik yeniden başlatma.
+
+
+### Tomcat 
+* ubuntu tomcat stop :
+    > sudo service tomcat9 stop
