@@ -73,6 +73,18 @@ A "Spring Bean" is simply a Java object. When Java objects are created by the Sp
 ### Spring Boot
 * Spring boot devtools : projeyi kaydettiğinde server'i otomatik yeniden başlatma.
 
+### Hibernate
+#### Session Factory
+* Reads the hibernate config file
+* Creates Session objects
+* Heavy-weight object
+* Only create once in your app
+#### Session
+* Wraps a JDBC connection
+* Main object used to save/retrieve objects
+* Short-lived object
+* Retrieved from SessionFactory
+
 
 ### Tomcat 
 * ubuntu tomcat stop :
