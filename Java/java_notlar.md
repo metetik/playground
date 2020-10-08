@@ -24,6 +24,7 @@
 * Polymorphism : Aralarında inheritance olan classların birbirinin referansını tutması.
 * Static constructor oluşturulabilir. 
     > static {  }
+* Static method'un içinde static olmayan method çağrılamaz. Çağırmak için obje oluşturmak gerekir.
 * [Erişim belirleyiciler](https://ramazanbiyikci.com.tr/java-erisim-belirleyiciler-access-modifiers/)
 
 # Spring
@@ -89,3 +90,8 @@ A "Spring Bean" is simply a Java object. When Java objects are created by the Sp
 ### Tomcat 
 * ubuntu tomcat stop :
     > sudo service tomcat9 stop
+
+### SQL
+* auto increment değerini sıfırlamak için truncate kullanılır
+* Cascade delete : bir row silindiğinde o row'un foreign key'lerinin referans ettiği row'ların da silinmesi
+* 
