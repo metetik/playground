@@ -35,7 +35,7 @@ public class Instructor {
 	
 	@OneToMany(mappedBy="instructor",
 			cascade = {CascadeType.DETACH, CascadeType.MERGE, 
-			CascadeType.PERSIST, CascadeType.REFRESH})
+					CascadeType.PERSIST,CascadeType.REFRESH})
 	private List<Course> courses;
 	
 	public Instructor() {
@@ -96,18 +96,19 @@ public class Instructor {
 	public void setCourses(List<Course> courses) {
 		this.courses = courses;
 	}
+	
 	public void addCourse(Course course) {
 		if(courses == null) {
-			courses = new ArrayList<Course>();
+			courses = new ArrayList<>();
 		}
+		
 		courses.add(course);
 		course.setInstructor(this);
 	}
+	
 	@Override
 	public String toString() {
 		return "Instructor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + 
 				", email=" + email + ", instructorDetail=" + instructorDetail + "]";
 	}
-	
-	
 }

@@ -29,7 +29,6 @@
     <fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
     <fullyQualifiedTypeName name="com.udemyspringhibernate1.CrudExamples"/>
     <fullyQualifiedTypeName name="com.udemyspringhibernate1.entity.Student"/>
-    <fullyQualifiedTypeName name="com.udemyspringhibernate1.entity.Instructor"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
     <fullyQualifiedTypeName name="com.sun.tools.classfile.Attribute.Factory"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
@@ -42,10 +41,12 @@
     <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
     <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
     <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
-    <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.udemyspringhibernate1.entity.Course"/>
     <fullyQualifiedTypeName name="com.udemyspringhibernate1.entity.InstructorDetail"/>
     <fullyQualifiedTypeName name="org.hibernate.Session"/>
     <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
+    <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+    <fullyQualifiedTypeName name="com.udemyspringhibernate1.entity.Instructor"/>
+    <fullyQualifiedTypeName name="javax.persistence.FetchType"/>
 </qualifiedTypeNameHistroy>

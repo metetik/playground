@@ -39,7 +39,7 @@ public class Mapping {
 			
 			session.beginTransaction();
 			session.save(instructorDetail);
-			session.save(instructor);
+			//session.save(instructor);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -118,19 +118,30 @@ public class Mapping {
 					new Instructor("Muhammed Emin","Tetik","metetik@gmail.com");
 			InstructorDetail instructorDetail = 
 					new InstructorDetail("youtube.com/metetik","bicycle");		
-			instructor.setInstructorDetail(instructorDetail);
 			
-			Course course1 = new Course("Spring - Hibernate");
-			Course course2 = new Course("Basic Python");
-			Course course3 = new Course("Django");
+			instructor.setInstructorDetail(instructorDetail);
+
+			session.beginTransaction();
+			session.save(instructor);
+			session.getTransaction().commit();
+			
+			session = sessionFactory.getCurrentSession();
+			session.beginTransaction();
+			
+			Course course1 = new Course("Java-Basic");
+			Course course2 = new Course("Java-Spring");
+			Course course3 = new Course("Python-Basic");
 			
 			instructor.addCourse(course1);
 			instructor.addCourse(course2);
 			instructor.addCourse(course3);
 			
-			session.beginTransaction();
-			session.save(instructor);
+			System.out.println(course1.getInstructor().getId());
+			session.save(course1);
+			session.save(course2);
+			session.save(course3);
 			session.getTransaction().commit();
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
