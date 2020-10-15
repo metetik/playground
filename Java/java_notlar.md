@@ -85,6 +85,8 @@ A "Spring Bean" is simply a Java object. When Java objects are created by the Sp
 * Main object used to save/retrieve objects
 * Short-lived object
 * Retrieved from SessionFactory
+#### Eager ve Lazy Loading
+* https://medium.com/@e.karabudak7/lazy-loading-vs-eager-loading-67d09c6a251
 
 
 ### Tomcat 

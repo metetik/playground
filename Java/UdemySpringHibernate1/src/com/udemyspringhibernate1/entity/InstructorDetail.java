@@ -7,8 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-@Entity(name="instructor_detail")
+@Entity
+@Table(name="instructor_detail")
 public class InstructorDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
