@@ -12,7 +12,7 @@ def webcam_goster():
     #Cerceveler halinde goruntu yakalar
         ret, frame = cap.read()
     #uzerinde islem yapacagimiz cerceve buraya gelsin
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     #Sonuc cerceveyi Goruntuleme:
         cv2.imshow('frame',gray)
         if cv2.waitKey(1) & 0xFF == ord('q'): # q ile cikis yapabilirsiniz

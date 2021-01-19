@@ -1,0 +1,14 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "photo-gallery",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+  "linuxAndroidStudioPath": "/home/metetik/Genel/android-studio-ide-201.6953283-linux/android-studio/bin/studio.sh"
+}
