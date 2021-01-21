@@ -1,0 +1,51 @@
+{
+    "products" : [{
+        "id": 1,
+        "name": "laptop",
+        "price": 4000,
+        "categoryId": 1,
+        "description":
+          "dizüstü bilgisayar dizüstü bilgisayar dizüstü bilgisayar dizüstü bilgisayar",
+        "imageUrl": "https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1382&q=80"
+      },
+      {
+        "id": 2,
+        "name": "laptop2",
+        "price": 2000,
+        "categoryId": 1,
+        "description":
+          "dizüstü bilgisayar dizüstü bilgisayar dizüstü bilgisayar dizüstü bilgisayar",
+        "imageUrl": "https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1382&q=80"
+      },
+      {
+        "id": 3,
+        "name": "laptop3",
+        "price": 5000,
+        "categoryId": 1,
+        "description":
+          "dizüstü1 bilgisayar dizüstü bilgisayar dizüstü bilgisayar dizüstü bilgisayar",
+        "imageUrl": "https://n11scdn.akamaized.net/a1/1024/elektronik/dizustu-ekran-koruyucusu/cayka-acer-aspire-156-inc-laptop-dizustu-bilgisayar-9h-nano-ek__1408012025663270.jpg"
+      },
+      {
+        "id": 4,
+        "name": "mouse",
+        "price": 100,
+        "categoryId": 2,
+        "description": "fare fare farefare fare farefare fare farefare fare fare",
+        "imageUrl": "https://productimages.hepsiburada.net/s/26/375/10163895435314.jpg"
+      },
+      {
+        "id": 5,
+        "name": "fare",
+        "price": 150,
+        "categoryId": 2,
+        "description":
+          "fare fare fare fare fare fare fare fare fare fare fare fare",
+        "imageUrl": "https://cdn.akakce.com/logitech/logitech-prodigy-g102-910-004939-optik-kablolu-oyuncu-z.jpg"
+      }],
+
+    "categories" : [
+        {"id" : 1, "name" : "Bilgisayar"},
+        {"id" : 2, "name" : "Elektronik"}
+    ]
+}

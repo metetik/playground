@@ -7,8 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-@Entity(name="instructor_detail")
+@Entity
+@Table(name="instructor_detail")
 public class InstructorDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +20,9 @@ public class InstructorDetail {
 	private String youtubeChannel;
 	@Column(name="hobby")
 	private String hobby;
-	@OneToOne(mappedBy="instructorDetail", cascade=CascadeType.ALL)
+	@OneToOne(mappedBy="instructorDetail", 
+			cascade={CascadeType.DETACH, CascadeType.MERGE, 
+					CascadeType.PERSIST,CascadeType.REFRESH})
 	private Instructor instructor;
 	
 	public InstructorDetail(){

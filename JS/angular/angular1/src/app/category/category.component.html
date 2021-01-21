@@ -1,0 +1,15 @@
+<h2 *ngIf="categories; else noCategory">{{title}}</h2>
+
+<div class="list-group">
+  <a class="list-group-item active" routerLink="products">Tüm ürünler</a>
+
+  <ng-template #noCategory>
+    <div class="alert alert-warning" role="alert">
+      Kategori bulunamadı
+    </div>
+  </ng-template>
+</div>
+
+<div class="list-group" *ngFor="let category of categories">
+  <a class="list-group-item" routerLink="products/category/{{category.id}}">{{category.name}}</a>
+</div>
