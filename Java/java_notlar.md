@@ -1,5 +1,8 @@
 # Java notlarım
 
+* Bir class'da clone metodu kullanılabilmesi için Clonable interface'i implement edilmelidir.
+
+
 ## Java OOP
 * initialize a class : class'ı new'lemek.
 * primitive type'lar(int,double,boolean vs.) value type'dır.

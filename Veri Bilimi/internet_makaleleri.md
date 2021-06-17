@@ -93,3 +93,73 @@ Bu makalede tartışılacak çeşitli hiperparametre ayarlama yöntemleri 3.adı
 * [GPyOpt](https://github.com/SheffieldML/GPyOpt)
 * [Scikit-Optimize](https://scikit-optimize.github.io/stable/)	
 * [SigOpt](https://sigopt.com/)
+
+# [Practical Guide to Hyperparameters Optimization for Deep Learning Models](https://blog.floydhub.com/guide-to-hyperparameters-search-for-deep-learning-models/)
+* In summary: Don't use Grid Search if your searching space contains more than 3 to 4 dimensions. Instead, use Random Search, which provides a really good baseline for each searching task.
+* It's also very common to start with one of the layouts above for a certain number of iterations, and then zoom into a promising subspace by sampling more densely in each variables range, and even starting a new search with the same or a different searching strategy.
+* Unfortunately, both Grid and Random Search share the common downside: “Each new guess is independent from the previous run!”
+## Bayesian Optimization
+This search strategy builds a surrogate model that tries to predict the metrics we care about from the hyperparameters configuration.
+
+At each new iteration, the surrogate we will become more and more confident about which new guess can lead to improvements. Just like the other search strategies, it shares the same termination condition.
+
+## Summary
+Bayes SMBO is probably the best candidate as long as resources are not a constraint for you or your team, but you should also consider establishing a baseline with Random Search.<br>
+On the other hand, if you're still learning or in the development phase, then babysitting – even if unpractical in term of space exploration – is the way to go.<br>
+Just like I mentioned in the SMBO section, none of these strategies provide a mechanism to save our resources if a training is performing poorly or even worse diverging – we'll have to wait until the end of the computation.
+
+* There is even more in the TensorFlow/Keras realm! The Keras team has just released an hyperparameter tuner for Keras, specifically for tf.keras with TensorFlow 2.0.
+
+# [How to Configure the Number of Layers and Nodes in a Neural Network](https://machinelearningmastery.com/how-to-configure-the-number-of-layers-and-nodes-in-a-neural-network/)
+Katmanları ve düğümler, spesifik tahmine dayalı modelleme probleminiz için yapılandırmanın en güvenilir yolu, sağlam bir test donanımıyla sistematik deneyler yapmaktır.
+
+* This can be a tough pill to swallow for beginners to the field of machine learning, looking for an analytical way to calculate the optimal number of layers and nodes, or easy rules of thumb to follow.
+
+* This is an often-cited theoretical finding and there is a ton of literature on it. In practice, we again have no idea how many nodes to use in the single hidden layer for a given problem nor how to learn or set their weights effectively. Further, many counterexamples have been presented of functions that cannot directly be learned via a single one-hidden-layer MLP or require an infinite number of nodes.
+Even for those functions that can be learned via a sufficiently large one-hidden-layer MLP, it can be more efficient to learn it with two (or more) hidden layers.
+	* Yani her ne kadar tüm fonksiyonları yeterli büyüklükteki tek katmanlı bir YSA ile temsil etmek mümkün olsa da tek katmanda çok düğümlü bir çözüm yerine birden fazla katman kullanmak daha verimlidir.
+
+## How Many Layers and Nodes to Use?
+### 1. Experimentation
+* In general, when I’m asked how many layers and nodes to use for an MLP, I often reply:<br>
+I don’t know. Use systematic experimentation to discover what works best for your specific dataset.<br>
+I still stand by this answer. In general, you cannot analytically calculate the number of layers or the number of nodes to use per layer in an artificial neural network to address a specific real-world predictive modeling problem. The number of layers and the number of nodes in each layer are model hyperparameters that you must specify.
+You are likely to be the first person to attempt to address your specific problem with a neural network. No one has solved it before you. Therefore, no one can tell you the answer of how to configure the network.
+### 2. Intuition
+* The network can be configured via intuition.
+For example, you may have an intuition that a deep network is required to address a specific predictive modeling problem.
+A deep model provides a hierarchy of layers that build up increasing levels of abstraction from the space of the input variables to the output variables.
+Given an understanding of the problem domain, we may believe that a deep hierarchical model is required to sufficiently solve the prediction problem. In which case, we may choose a network configuration that has many layers of depth.
+This intuition can come from experience with the domain, experience with modeling problems with neural networks, or some mixture of the two.
+In my experience, intuitions are often invalidated via experiments.
+### 3. Go For Depth
+* In their important textbook on deep learning, Goodfellow, Bengio, and Courville highlight that empirically, on problems of interest, deep neural networks appear to perform better.<br>
+Specifically, they state the choice of using deep neural networks as a statistical argument in cases where depth may be intuitively beneficial.
+> Empirically, greater depth does seem to result in better generalization for a wide variety of tasks. […] This suggests that using deep architectures does indeed express a useful prior over the space of functions the model learns.<br>
+— Page 201, Deep Learning, 2016.
+
+### 4. Borrow Ideas
+Find research papers that describe the use of MLPs on instances of prediction problems similar in some way to your problem. Note the configuration of the networks used in those papers and use them as a starting point for the configurations to test on your problem.
+
+Transferability of model hyperparameters that result in skillful models from one problem to another is a challenging open problem and the reason why model hyperparameter configuration is more art than science.
+
+### 5. Exhaustive
+Design an automated search to test different network configurations.
+
+You can seed the search with ideas from literature and intuition.
+
+Some popular search strategies include:
+
+Random: Try random configurations of layers and nodes per layer.<br>
+Grid: Try a systematic search across the number of layers and nodes per layer.<br>
+Heuristic: Try a directed search across configurations such as a genetic algorithm or Bayesian optimization.<br>
+Exhaustive: Try all combinations of layers and the number of nodes; it might be feasible for small networks and datasets.<br>
+This can be challenging with large models, large datasets and combinations of the two. Some ideas to reduce or manage the computational burden include:
+
+Fit models on a smaller subset of the training dataset to speed up the search.
+Aggressively bound the size of the search space.
+Parallelize the search across multiple server instances (e.g. use Amazon EC2 service).
+I recommend being systematic if time and resources permit.
+
+# [How to Configure Image Data Augmentation in Keras](https://machinelearningmastery.com/how-to-configure-image-data-augmentation-when-training-deep-learning-neural-networks/)
+Veri arttırma, eğitim verisetini sanal olarak genişletmeye yarayan bir tekniktir. Görsel veri artırımı keras'ta `ImageDataGenerator` sınıfıyla gerçekleştirilir. Veri artırımının ayarları özenle yapılmalıdır. Söz gelimi bir kedinin dikey yansıması işe yarayan bir türevken yatay yansıması gerçek hayatı yansıtmayan bir durumdur. Ayrıca modelden izole edilip üretilen örnekler görülmelidir. 

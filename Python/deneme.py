@@ -1,57 +1,19 @@
-boxes = [1,2,3]
-unitsPerBox = [3,2,1]
-truckSize = 3
+A = [5, 2, 4, 6, 3, 7]
+B = [5, 8 ,4 ,55, 64, 321, 3, 512, 2 , 4, 8, 15]
+C = [7,25,52,54,64,21,52,4,8,9]
 
-def getMaxUnits(boxes, unitsPerBox, truckSize):
-    summ = 0
-
-    for i in range(truckSize):
-        maxUnitsIndex = getMaxIndex(unitsPerBox)
-        
-        if(boxes[maxUnitsIndex] == 0):
-            unitsPerBox[maxUnitsIndex] = 0
-            maxUnitsIndex = getMaxIndex(unitsPerBox)
-            boxes[maxUnitsIndex] -= 1
-            summ += unitsPerBox[maxUnitsIndex]
-        else:
-            boxes[maxUnitsIndex] -= 1
-            summ += unitsPerBox[maxUnitsIndex]
+def solution(A):
     
-    return summ
+	min1 = 9223372036854775807
+	min2 = 9223372036854775807
 
-def getMaxIndex(li):
-    max1 = 0
-    for i in range(len(li)):
-        if li[i] > li[max1]:
-            max1 = i
-    
-    return max1
+	for i in range(1,len(A)-1):
+		if A[i] < min1:
+			min2 = min1
+			min1 = A[i]
+		elif A[i] < min2:
+			min2 = A[i]
 
-a = getMaxUnits(boxes,unitsPerBox,truckSize)
-print(a)
+		print("min1, min2 : {}, {}".format(min1,min2))
 
-"""
-
-def getMaxUnits(boxes, unitsPerBox, truckSize):
-    print("/////////////////////\\\\\\\\\\\\\\\\")
-    print(boxes)
-    print(unitsPerBox)
-    print(truckSize)
-    print("/////////////////////\\\\\\\\\\\\\\\\")
-    
-    summ = 0
-
-    for i in range(truckSize):
-        maxUnitsIndex = unitsPerBox.index(max(unitsPerBox))
-        
-        if(boxes[maxUnitsIndex] == 0):
-            unitsPerBox[maxUnitsIndex] = 0
-            maxUnitsIndex = unitsPerBox.index(max(unitsPerBox))
-            boxes[maxUnitsIndex] -= 1
-            summ += unitsPerBox[maxUnitsIndex]
-        else:
-            boxes[maxUnitsIndex] -= 1
-            summ += unitsPerBox[maxUnitsIndex]
-    
-    return summ
-"""
+solution(C)
